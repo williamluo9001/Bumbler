@@ -21,6 +21,8 @@ class CommentController < ApplicationController
   end
 
   def destroy
+    @comment.destroy
+    redirect_to comments_path, notice: "Comment has been obliterated!"
   end
 
   def create
