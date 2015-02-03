@@ -1,4 +1,5 @@
-class CreateComments < ActiveRecord::Migration
+class CreateComments < ActiveRecord::Migration\
+	belongs_to User
   def change
     create_table :comments do |t|
       t.text :body

@@ -1,12 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
   <title>Bunbler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+
+	<nav class="top-navigation";>
+		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; background-color: rgba(102,204,255,.2);"/>
+			<!-- <a href="/"><img src="/images/logo.png " style="margin-top:35px; margin-left:100px; float:left; width:150px;"></a> -->
+		<form method="POST" action="signin">
+			<b><label for="username">Username</label>
+			<input type="text" name="[user]username" size="5">
+			<label for="password">Password</label>
+			<input type="password" name="[user]password" size="5">
+			<input type="submit" value="Log in!"></b>
+			<br><br><a class="pulse" href="/signup"><i style="
+    		padding-left: 80px; font-size:40px;
+			">Sign up!</i></a>
+		</form>
+
+	</nav>
+</header>
+
 
 <%= yield %>
 
