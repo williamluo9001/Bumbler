@@ -1,4 +1,41 @@
 Rails.application.routes.draw do
+  get 'comment/new'
+
+  get 'comment/edit'
+
+  get 'comment/show'
+
+  get 'comment/create'
+
+  get 'comment/update'
+
+  get 'post/destroy'
+
+  get 'post/new'
+
+  get 'post/edit'
+
+  get 'post/show'
+
+  get 'post/destrop'
+
+  get 'post/create'
+
+  get 'post/update'
+
+  get 'users/index'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/show'
+
+  # resources :users
+  # resource :posts
+
+  # post '.signing', to: 'sessions#create'
+  # delete '/logout', to:"sessions"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
