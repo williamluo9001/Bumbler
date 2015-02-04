@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
-  <title>Bunbler</title>
+  <title>Bumbler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -26,8 +26,19 @@
 		</form>
 
 	</nav>
+	<div>
+		<%= render 'shared/login' %>
+		<% flash[:notice] if flash[:notice] %>
+		<% flash[:alert] if flash[:alert] %>
+	</div>
 </header>
 
+<!-- 	<header>
+		<%= render 'shared/login' %>
+	</header>
+	<br />
+	<% flash[:notice] if flash[:notice] %>
+	<% flash[:alert] if flash[:alert] %> -->
 
 <%= yield %>
 

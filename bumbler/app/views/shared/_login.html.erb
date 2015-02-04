@@ -1,0 +1,16 @@
+<% if current_user %>
+	<p>Hello <%= current_user.name %>
+		<%= link_to 'Sign out', logout_path, method: :delete %>
+		|
+		<% link_to 'New Bumble', new_post_path %>
+	</p>
+<% else %>
+	<%= form_tag(signin_path, method: :post) do %>
+		<%= label_tag :email %>
+		<%= email_field_tag :email %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+		<%= submit_tag "Login" %>
+	<% end %>
+<% end %>
+
