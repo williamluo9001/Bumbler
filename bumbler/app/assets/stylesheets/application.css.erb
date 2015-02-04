@@ -1,18 +1,4 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 
 body {
 	background-image: url(<%= asset_path 'bodybg.jpg' %>);
@@ -28,7 +14,7 @@ body {
 
 .top-navigation {
 	background-image: url(<%= asset_path 'navbg.jpg' %>);
-	background-size: cover;
+	background-size: 100%;
 	padding-bottom: 35px;
 	margin-bottom: 20px;
 	height:100px;
@@ -38,9 +24,6 @@ body {
   	border-bottom-color:black;
   	margin-top: -8px;
 }
-/*a.link {
-	color:#660000 ;
-}*/
 
 .top-navigation a {
 		color:#FF6666;
@@ -63,10 +46,41 @@ body {
 padding:20px;
 width:60%;
 overflow: auto;
-height:400px;
+min-height:400px;
+max-height: 600px;
 margin-right: auto;
 margin-left: auto;
 background-color: rgba(102,204,255,.3);
+}
+
+.signup{
+
+	margin-left: auto;
+	margin-right: auto;
+	width:300px;
+	height:530px;
+	padding: 20px;
+	background-image: url(<%= asset_path 'signupbg.jpg' %>);
+	background-size: 100% 100%;
+	border-radius: 25px;
+
+
+}
+
+.signup form{
+border-radius: 25px;
+background-color: rgba(255,0,51,.2);
+float:left;
+padding: 20px;
+}
+
+.signup label{
+	color:#FF3366;
+	font-family: segoe Print;
+	font-size: 20px;
+	display: inline-block;
+	width:100px;
+	margin-right: 80px;
 }
 
 .pulse{
