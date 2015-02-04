@@ -7,9 +7,6 @@ Rails.application.routes.draw do
  resources :comments
 end
 
-
-
-
  get 'signin', to: 'sessions#new'
  post '/signin', to: 'sessions#create'
  delete '/logout', to: 'sessions#destroy'

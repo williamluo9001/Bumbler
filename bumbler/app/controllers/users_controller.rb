@@ -20,7 +20,8 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user=User.create(params[:user])
+  	@user=User.create(user_params)
+    session[:user_id] = @user.id
   	redirect_to @user, notice: "Welcome to Bumbler!"
   end
 
@@ -39,6 +40,12 @@ def user_params
 	params.require(:user).permit(:email, :name, :password, :bio)
 end
 
-
+# def current_user
+#   if session[:user_id]
+#     @user = User.find(session[:user_id])
+#   else
+#     nil
+#   end
+# end
 
 end
