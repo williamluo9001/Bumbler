@@ -22,7 +22,26 @@
 				<input type="submit" value="Sign out"> 
 			</form>
 		<% else %>
-		<form method="POST" action="signin">
+		<% if current_user %>
+		<p>Hello <%= current_user.name %>
+		<%= link_to 'Sign out', logout_path, method: :delete %>
+		|
+		<% link_to 'New Bumble', new_post_path %>
+		</p>
+		<% else %>
+		<%= form_tag(signin_path, method: :post) do %>
+		<%= label_tag :email %>
+		<%= email_field_tag :email %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+		<%= submit_tag "Login" %>
+
+		<% end %>
+		<a class="pulse" href="/signup"><i style="
+    		padding-left: 80px; font-size:40px;
+			">Sign up!</i></a>
+		<% end %>
+		<!-- <form method="POST" action="signin">
 			<b><label for="username">Username</label>
 			<input type="text" name="[user]username" size="5">
 			<label for="password">Password</label>
@@ -32,7 +51,7 @@
     		padding-left: 80px; font-size:40px;
 			">Sign up!</i></a>
 		</form>
-		<% end %>
+		<% end %> -->
 
 	</nav>
 	<div>
