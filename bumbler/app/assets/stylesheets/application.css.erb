@@ -18,7 +18,8 @@ body {
 	background-image: url(<%= asset_path 'bodybg.jpg' %>);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: 50% 90%;
+	background-size:100% 80%; 
 	height:100%;
 	width: auto;
 	background-color: black;
@@ -27,7 +28,7 @@ body {
 
 .top-navigation {
 	background-image: url(<%= asset_path 'navbg.jpg' %>);
-	background-size: contain;
+	background-size: cover;
 	padding-bottom: 35px;
 	margin-bottom: 20px;
 	height:100px;
@@ -47,8 +48,8 @@ body {
 }
 
 .top-navigation form {
-	background-color: rgba(102,204,255,.1);
-	height:105px;
+	background-color: rgba(32,32,32,.1);
+	height:95px;
     font-family: 'Roboto', sans-serif;
     float:right;
     padding:18px;
@@ -58,6 +59,13 @@ body {
 }
 
 .indexbody {
+padding:20px;
+width:60%;
+overflow: auto;
+min-height:500px;
+margin-right: auto;
+margin-left: auto;
+background-color: rgba(102,204,255,.1);
 
 }
 

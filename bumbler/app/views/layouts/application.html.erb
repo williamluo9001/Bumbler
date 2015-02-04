@@ -12,8 +12,16 @@
 <header>
 
 	<nav class="top-navigation";>
-		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; background-color: rgba(102,204,255,.2);"/>
-			<!-- <a href="/"><img src="/images/logo.png " style="margin-top:35px; margin-left:100px; float:left; width:150px;"></a> -->
+		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; background-color: rgba(88,0,0,.4);"/>
+		<% if session[:user_id] != nil %>
+		
+			<form method="POST" action="signout">
+				<b>Welcome &nbsp;<%= current_user.username if current_user %>&nbsp;/
+				<a href="/profile">Go to profile</a>&nbsp;/
+				<a href="/settings">Edit my settings</b></a>
+				<input type="submit" value="Sign out"> 
+			</form>
+		<% else %>
 		<form method="POST" action="signin">
 			<b><label for="username">Username</label>
 			<input type="text" name="[user]username" size="5">
@@ -24,6 +32,7 @@
     		padding-left: 80px; font-size:40px;
 			">Sign up!</i></a>
 		</form>
+		<% end %>
 
 	</nav>
 	<div>
@@ -32,14 +41,6 @@
 		<% flash[:alert] if flash[:alert] %>
 	</div>
 </header>
-
-<!-- 	<header>
-		<%= render 'shared/login' %>
-	</header>
-	<br />
-	<% flash[:notice] if flash[:notice] %>
-	<% flash[:alert] if flash[:alert] %> -->
-
 <%= yield %>
 
 </body>
