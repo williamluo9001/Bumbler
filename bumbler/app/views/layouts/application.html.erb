@@ -12,7 +12,8 @@
 <header>
 
 	<nav class="top-navigation";>
-		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; background-color: rgba(88,0,0,.4);"/>
+		<a href="/"><img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; background-color: rgba(88,0,0,.4);"/></a>
+		
 		<% if session[:user_id] != nil %>
 		
 			<form method="POST" action="signout">
@@ -39,7 +40,7 @@
 		<% end %>
 	
 		<% end %>
-		<a class="pulse" href="/signup"><i style="
+		<a class="pulse" href="/users/new"><i style="
     		margin-left: 80px; font-size:40px;
 			">Sign up!</i></a>
 		<% end %> 

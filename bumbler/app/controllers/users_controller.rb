@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user= User.new
+  	@user = User.new
   end
 
   def edit
@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   def destroy
   	@user.destroy
   	redirect_to users_path, notice: "Sorry to see you leave Bumbler!"
+  end
 
 private
 
