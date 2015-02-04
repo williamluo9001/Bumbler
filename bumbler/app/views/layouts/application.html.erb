@@ -12,17 +12,37 @@
 <header>
 
 	<nav class="top-navigation";>
-		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; background-color: rgba(102,204,255,.2);"/>
-		<form method="POST" action="signin">
-			<b><label for="username">Username</label>
-			<input type="text" name="[user]username" size="5">
-			<label for="password">Password</label>
-			<input type="password" name="[user]password" size="5">
-			<input type="submit" value="Log in!"></b>
-			<br><br><a class="pulse" href="/signup"><i style="
-    		padding-left: 80px; font-size:40px;
+		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; background-color: rgba(88,0,0,.4);"/>
+		<% if session[:user_id] != nil %>
+		
+			<form method="POST" action="signout">
+				<b>Welcome &nbsp;<%= current_user.username if current_user %>&nbsp;/
+				<a href="/profile">Go to profile</a>&nbsp;/
+				<a href="/settings">Edit my settings</b></a>
+				<input type="submit" value="Sign out"> 
+			</form>
+		<% else %>
+		<% if current_user %>
+		<p>Hello <%= current_user.name %>
+		<%= link_to 'Sign out', logout_path, method: :delete %>
+		|
+		<% link_to 'New Bumble', new_post_path %>
+		</p>
+		<% else %>
+		<%= form_tag(signin_path, method: :post) do %>
+		<%= label_tag :email %>
+		<%= email_field_tag :email %>
+		<%= label_tag :password %>
+		<%= password_field_tag :password %>
+		<%= submit_tag "Login" %>
+
+		<% end %>
+	
+		<% end %>
+		<a class="pulse" href="/signup"><i style="
+    		margin-left: 80px; font-size:40px;
 			">Sign up!</i></a>
-		</form>
+		<% end %> 
 
 	</nav>
 	<div>
@@ -31,8 +51,6 @@
 		<% flash[:alert] if flash[:alert] %>
 	</div>
 </header>
-
-
 <%= yield %>
 
 </body>
