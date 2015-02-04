@@ -1,2 +1,5 @@
-<h1>Post#show</h1>
-<p>Find me in app/views/post/show.html.erb</p>
+<h1><%= @post.title %></h1>
+<p> <%= @post.body %></p>
+
+<%= link_to 'new post', new_post_path %>
+
