@@ -13,7 +13,6 @@
 
 	<nav class="top-navigation";>
 		<img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; background-color: rgba(102,204,255,.2);"/>
-			<!-- <a href="/"><img src="/images/logo.png " style="margin-top:35px; margin-left:100px; float:left; width:150px;"></a> -->
 		<form method="POST" action="signin">
 			<b><label for="username">Username</label>
 			<input type="text" name="[user]username" size="5">
@@ -33,12 +32,6 @@
 	</div>
 </header>
 
-<!-- 	<header>
-		<%= render 'shared/login' %>
-	</header>
-	<br />
-	<% flash[:notice] if flash[:notice] %>
-	<% flash[:alert] if flash[:alert] %> -->
 
 <%= yield %>
 
