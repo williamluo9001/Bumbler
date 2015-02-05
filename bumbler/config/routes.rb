@@ -11,7 +11,6 @@ end
  post '/signin', to: 'sessions#create'
  delete '/logout', to: 'sessions#destroy'
 
-
   root 'welcome#index'
 
   
