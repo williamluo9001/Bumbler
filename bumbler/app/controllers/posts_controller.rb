@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :show, :destroy]
 
     def index
-      @posts= Post.all
+      @post= Post.all
     end
 
   def new
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.update(post.params)
+    @post= Post.create(post_params)
     redirect_to @post, notice: "Thanks for the new Bumble!"
   end
 
