@@ -19,6 +19,7 @@
 		<p>Hello <%= current_user.name %>
 		<%= link_to 'Sign out', logout_path, method: :delete %>
 		<%= link_to 'Profile', user_path(current_user) %>
+		<%= link_to 'New post', new_post_path %>
 		</p>
 		<div>
 		<% else %>
