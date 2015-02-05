@@ -1,7 +1,7 @@
 
 
 body {
-	color: white;
+	color: #CC0033;
 	background-image: url(<%= asset_path 'bodybg.jpg' %>);
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -14,7 +14,7 @@ body {
 }
 
 a {
-	color: white;
+	text-decoration: none;
 }
 
 .top-navigation {
@@ -30,12 +30,23 @@ a {
   	margin-top: -8px;
 }
 
+
+
 .top-navigation a {
-		color:#FF6666;
+	font-size: 30px;
+	color:#FF6666 ;
+	font-family: AR CHRISTY;
+	margin-left: 15px;
+}
+
+#name {
+	font-size: 35px;
+	color:#FF9999;
+	font-family: HP PSG;
+	text-align: center;
 }
 
 .top-navigation form {
-	background-color: rgba(32,32,32,.1);
 	height:95px;
     font-family: 'Roboto', sans-serif;
     float:right;
@@ -90,7 +101,8 @@ padding: 20px;
 
 #profile{
 float: right;
-
+height:130px;
+background-color: rgba(48,0,0,.4);
 }
 .profilefeed label{
 	animation-name: pulse;
@@ -318,4 +330,8 @@ float: right;
 	100% {
 		-webkit-transform: rotate(-380deg);	
 	}				
+}
+
+a:hover {
+    color: #700000 ;
 }

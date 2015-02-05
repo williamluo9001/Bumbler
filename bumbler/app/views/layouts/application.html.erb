@@ -16,11 +16,12 @@
 		<a href="/"><img class="tossing" src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; border-radius:25px; padding:5px; background-color: rgba(88,0,0,.4);"/></a>
 		<div id="profile">
 		<% if current_user %>
-		<p>Hello <%= current_user.name %>
+		<p id="name">Welcome <%= current_user.name %></p>
+		<p>
 		<%= link_to 'New Bumble', new_post_path %>
 		<%= link_to 'Profile', user_path(current_user) %>
 		<%= link_to 'Sign out', logout_path, method: :delete %>
-		
+		</p>
 		
 		</p>
 		<div>
