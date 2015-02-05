@@ -2,7 +2,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="/stylesheets/application.css">
   <title>Bumbler</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -10,8 +9,8 @@
 </head>
 <body>
 <header>
-		<% flash[:notice] if flash[:notice] %>
-		<% flash[:alert] if flash[:alert] %>
+		<%= flash[:notice] if flash[:notice] %>
+		<%= flash[:alert] if flash[:alert] %>
 
 	<nav class="top-navigation";>
 		<a href="/"><img src="<%= asset_path('logo.png') %>" style="margin-top:0; margin-left:50px; float:left; width:122px; height:130px; background-color: rgba(88,0,0,.4);"/></a>

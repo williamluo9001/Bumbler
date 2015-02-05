@@ -5,11 +5,15 @@ class SessionsController < ApplicationController
 		@user = User.find_by(email: params[:email])
 		if @user and @user.password == params[:password]
 			flash[:notice] = "Successfully signed into Bumbler!"
-			session[:user_id] = @user_id
+			puts "inside login session"
+			session[:user_id] = @user.id
+			redirect_to @user
 		else
 			flash[:alert] = "Do you even go here???"
-		end
+			puts "inside login failed"
 			redirect_to root_path
+		end
+			
 	end
 
 	def destroy
