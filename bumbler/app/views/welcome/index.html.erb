@@ -5,12 +5,9 @@
 			<% Post.last(10).reverse.each do |x| %>
 			<p><%= 'Title: ' + x.title %><br>
 				<%= 'By: ' + x.user.name %>
-			<br><br>
-			<%= 'Bumble: ' +  x.body %></p><br>
-				<%= Comment.last(10).reverse.each do |y| %>
-				<%= y.title, y.body %>
 				<% end %>
-			<% end %>
+			<br><br>
+	
 		</div>
 	</div>
 
