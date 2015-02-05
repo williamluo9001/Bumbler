@@ -1,6 +1,9 @@
 <div class="indexbody" >
 	<div class="slideDown">
-
+	<h1><i><u>New posts!</i></u></h1>
+	<% Post.last(10).reverse.each do |x| %>
+	<p><%= x.title + ' | '+ x.body %></p>
+	<% end %>
 
 	</div>
 
