@@ -1,7 +1,14 @@
-<h1><%= @user.name %></h1>
-<p>(<%= @user.email %>) <%= @user.bio %></p>
+<div id="profileinfo">
+
+<h1>Welcome <%= @user.name %></h1>
+<h3>Email</h3>(<%= @user.email %>) <br />
+	<h3>Bio</h3><%= @user.bio %><br />
+
+	<h3><%= link_to 'Edit profile', edit_user_path(@user) %></h3>
 
 <h3><%= @user.name %>'s Posts</h3>
+
+
 
 <ul>
 	<% @user.posts.each do |post| %>
@@ -10,4 +17,8 @@
 </ul>
 
 
-<%= link_to 'back', users_path %> | <%= link_to 'edit', edit_user_path(@user) %>
+
+
+
+
+</div>
