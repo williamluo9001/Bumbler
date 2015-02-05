@@ -40,12 +40,12 @@ def user_params
 	params.require(:user).permit(:email, :name, :password, :bio)
 end
 
-# def current_user
-#   if session[:user_id]
-#     @user = User.find(session[:user_id])
-#   else
-#     nil
-#   end
-# end
+def current_user
+  if session[:user_id]
+    @user = User.find(session[:user_id])
+  else
+    nil
+  end
+end
 
 end
