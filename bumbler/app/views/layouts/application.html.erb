@@ -17,9 +17,11 @@
 		<div id="profile">
 		<% if current_user %>
 		<p>Hello <%= current_user.name %>
-		<%= link_to 'Sign out', logout_path, method: :delete %>
-		<%= link_to 'Profile', user_path(current_user) %>
 		<%= link_to 'New Bumble', new_post_path %>
+		<%= link_to 'Profile', user_path(current_user) %>
+		<%= link_to 'Sign out', logout_path, method: :delete %>
+		
+		
 		</p>
 		<div>
 		<% else %>
