@@ -1,5 +1,9 @@
 <div class="indexbody" >
 	<div class="slideDown">
+	<h1><i><u>New Bumbles!</i></u></h1>
+	<% Post.last(10).reverse.each do |x| %>
+	<p><%= x.title + ' | '+ x.body %></p>
+	<% end %>
 		<h1 class="pulse"><i><u>New Bumbles!</i></u></h1>
 		<div class="perPost">
 			<% Post.last(10).reverse.each do |x| %>
@@ -9,7 +13,6 @@
 			<%= 'Bumble: ' +  x.body %></p><br>
 			<% end %>
 		</div>
-
 	</div>
 
 </div>
