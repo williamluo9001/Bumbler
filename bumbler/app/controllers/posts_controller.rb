@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  scope :created_before -> {(timestamp: today)}
-
   before_action :set_post, only: [:edit, :update, :show, :destroy]
 
     def index
