@@ -1,5 +1,5 @@
 <h1><%= @user.name %></h1>
 <p><%= @post.title %></p>
 <p><%= @post.body %></P>
-	<p><% Comment.each do |comment| %>
+	<p><% Comment.each do |comment + @comment_time| %>
 		<%= link_to comment.title, comment_path(comment) %>
