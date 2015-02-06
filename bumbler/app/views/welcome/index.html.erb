@@ -7,7 +7,7 @@
 				<%= 'By: ' + x.user.name %>
 			<br><br>
 			<%= 'Bumble: ' +  x.body %></p>
-			<%= form_tag(new_post_comment_path, method: :post) do %>
+			<%= form_tag(post_comments_path, method: :post) do %>
 			<%= label_tag :comment %>
 			<%= text_field_tag :comment %>
 			<%= submit_tag "Add comment" %>
